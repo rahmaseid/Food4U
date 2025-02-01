@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "327713271491",
+    "project_id": "food4you-16876",
+    "storage_bucket": "food4you-16876.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327713271491:android:7e85b57cd896e37b03fc76",
+        "android_client_info": {
+          "package_name": "com.anonymous.Food4U"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwI1lb9EdPxwjiCBsh1IaE_5-7rMSUGCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
