@@ -5,6 +5,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+import Constants from 'expo-constants';
 
 import { useColorScheme } from '@/components/useColorScheme';
 
@@ -17,6 +18,8 @@ export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
   initialRouteName: '(tabs)',
 };
+export const CLIENT_ID = process.env.EXPO_PUBLIC_CLIENT_ID; 
+export const CLIENT_SECRET = process.env.EXPO_PUBLIC_CLIENT_SECRET;
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
