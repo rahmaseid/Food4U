@@ -1,13 +1,14 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TextInput } from 'react-native';
+import React from 'react';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 import { CLIENT_ID } from '../_layout';
 import { CLIENT_SECRET } from '../_layout';
 const Buffer = require("buffer").Buffer;
-const GetProductFromKrogerAPI= () => {
-  return fetch('https://api-ce.kroger.com/v1/products',
-  {
+
+const GetProductFromKrogerAPI = () => {
+  return fetch('https://api-ce.kroger.com/v1/products', {
     method: 'GET',
     headers: {
       Accept: 'application/json',
@@ -26,14 +27,8 @@ const GetProductFromKrogerAPI= () => {
     });
 };
 
-/*curl -X POST \
-  'https://api.kroger.com/v1/connect/oauth2/token' \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -H 'Authorization: Basic {{base64(CLIENT_ID:CLIENT_SECRET)}}' \
-  -d 'grant_type=client_credentials'*/
-const GetTokenFromKrogerAPI= () => {
-  return fetch('https://api.kroger.com/v1/connect/oauth2/token',
-  {
+const GetTokenFromKrogerAPI = () => {
+  return fetch('https://api.kroger.com/v1/connect/oauth2/token', {
     method: 'POST',
     headers: new Headers({
       'Accept': '*/*',
@@ -58,13 +53,21 @@ const GetTokenFromKrogerAPI= () => {
 };
 
 export default function TabOneScreen() {
+  const [searchQuery, setSearchQuery] = React.useState('');
   const data = GetTokenFromKrogerAPI();
   console.log(data);
 
-  console.log("BASE64: ", new Buffer( (CLIENT_ID + ':' + CLIENT_SECRET) ).toString("base64")); 
+  console.log("BASE64: ", new Buffer((CLIENT_ID + ':' + CLIENT_SECRET)).toString("base64")); 
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>
+      <TextInput
+        style={styles.searchBar}
+        placeholder="Search..."
+        value={searchQuery}
+        onChangeText={setSearchQuery}
+      />
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="app/(tabs)/index.tsx" />
     </View>
@@ -84,6 +87,15 @@ const styles = StyleSheet.create({
   separator: {
     marginVertical: 30,
     height: 1,
+    width: '80%',
+  },
+  searchBar: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    marginVertical: 10,
     width: '80%',
   },
 });
