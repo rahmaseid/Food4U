@@ -37,3 +37,7 @@ yarn-error.*
 
 #.json files
 google-services.json
+
+
+# js files
+metro.config.js
