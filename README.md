@@ -5,7 +5,7 @@ Hello! Welcome to the Food4U app. This app is meant to help disadvanatged people
 
 I was inspired to create this app after the events of Hurricane Helene. After doing much research, there were many people impacted, losing not just their homes, but also jobs, families, and way of living. In East tennessee, land is much more spread out and vast, unlike the region I live in (Middle Tennessee), so there are less resources there available to them. 
 
-My intention was to help people in Tennessee by allowing users to be able find avaialble healthy options from local stores, farms, food pantries, etc. by having access to their location and setting certain radius limits, like 10 or 20 miles away from the user. Then once I had more resources, I intend to expand the app nationwide.
+My intention was to help people in Tennessee by allowing users to be able find avaialble healthy options from local stores, farms, food pantries, etc. by having access to their location and setting certain radius limits, like 10 or 20 miles away from the user. Then once I have more resources, I intend to expand the app nationwide.
 
 ## Installation
 
